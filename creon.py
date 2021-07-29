@@ -77,7 +77,7 @@ class FuturesEventHandler:
             item = {
                 'code': self.obj.GetHeaderValue(0),
                 'trade_quote' : 'trade',
-                'time_actual' : datetime.datetime.now().strftime('%H:%M:%S.%f'),
+                'time_received' : datetime.datetime.now().strftime('%H:%M:%S.%f'),
                 'trade_price' : round(self.obj.GetHeaderValue(1),2), # 현재가
                 'open' : self.obj.GetHeaderValue(7), # 시가
                 'high' : self.obj.GetHeaderValue(8), # 고가
@@ -99,7 +99,7 @@ class FuturesEventHandler:
             item = {
                 'code': self.obj.GetHeaderValue(0),
                 'trade_quote' : 'quote',
-                'time_actual' : datetime.datetime.now().strftime('%H:%M:%S.%f'),
+                'time_received' : datetime.datetime.now().strftime('%H:%M:%S.%f'),
                 'time' : self.obj.GetHeaderValue(1),  # 처리시각
                 'ask_price_1' : round(self.obj.GetHeaderValue(2),2),
                 'ask_price_2' : round(self.obj.GetHeaderValue(3),2),
@@ -150,7 +150,7 @@ class StockEventHandler:
                 'code': self.obj.GetHeaderValue(0),
                 'name': self.obj.GetHeaderValue(1),
                 'trade_quote' : 'trade',
-                'time_actual' : datetime.datetime.now().strftime('%H:%M:%S.%f'),
+                'time_received' : datetime.datetime.now().strftime('%H:%M:%S.%f'),
                 'time': self.obj.GetHeaderValue(3),
                 'trade_price': self.obj.GetHeaderValue(13),
                 'change': int(self.obj.GetHeaderValue(2)),
@@ -181,7 +181,7 @@ class StockEventHandler:
             item = {
                 'code': self.obj.GetHeaderValue(0),
                 'trade_quote' : 'quote',
-                'time_actual' : datetime.datetime.now().strftime('%H:%M:%S.%f'),
+                'time_received' : datetime.datetime.now().strftime('%H:%M:%S.%f'),
                 'time' : self.obj.GetHeaderValue(1),  # 처리시각
                 'volume' : int(self.obj.GetHeaderValue(2)),
                 'ask_price_1' : int(self.obj.GetHeaderValue(3)),
