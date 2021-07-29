@@ -223,8 +223,8 @@ class MyWindow(QMainWindow):
     def btnStart_clicked(self):
         c.subscribe_futures('167R9', cb_futures)
         c.subscribe_futures('165R9', cb_futures)
-        c.subscribe_stock('005930', cb_futures) # 삼성전자
-        c.subscribe_stock('069500', cb_futures) # KODEX 200 ETF
+        c.subscribe_stock('005930', cb_stock) # 삼성전자
+        c.subscribe_stock('069500', cb_stock) # KODEX 200 ETF
         # c.subscribe_stocktrade('035420', cb)
         # c.subscribe_stocktrade('025980', cb)
         # objCur = CpRPOvForMst()
