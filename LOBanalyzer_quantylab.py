@@ -85,6 +85,7 @@ def cb_stock(item):
     # print(item)
     headersCSV = [
         'code',
+        'name',
         'trade_quote',
         'time',
         'time_received',
@@ -132,7 +133,7 @@ def cb_stock(item):
         'ask_price_5',
         'ask_price_4',
         'ask_price_3',
-        'ask_price_3',
+        'ask_price_2',
         'ask_price_1',
         'bid_price_1',
         'bid_price_2',

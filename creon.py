@@ -18,7 +18,7 @@ class Creon:
         handler_trade = win32com.client.WithEvents(obj_trade, StockEventHandler)
         handler_quote = win32com.client.WithEvents(obj_quote, StockEventHandler)
         handler_trade.set_attrs(obj_trade, cb, 'trade')
-        handler_quote.set_attrs(obj_trade, cb, 'quote')
+        handler_quote.set_attrs(obj_quote, cb, 'quote')
         self.stock_handlers[code] = [obj_trade,obj_quote]
         obj_trade.Subscribe()
         obj_quote.Subscribe()
@@ -183,7 +183,6 @@ class StockEventHandler:
                 'trade_quote' : 'quote',
                 'time_received' : datetime.datetime.now().strftime('%H:%M:%S.%f'),
                 'time' : self.obj.GetHeaderValue(1),  # 처리시각
-                'volume' : int(self.obj.GetHeaderValue(2)),
                 'ask_price_1' : int(self.obj.GetHeaderValue(3)),
                 'bid_price_1' : int(self.obj.GetHeaderValue(4)),
                 'ask_amount_1' : int(self.obj.GetHeaderValue(5)),
